@@ -5,7 +5,7 @@ namespace ADSProject.Interfaces
     public interface IMateria
     {
         public int AgregarMateria(Materia materia);
-        public int Actualizarmateria(int idMateria, Materia materia);
+        public int ActualizarMateria(int idMateria, Materia materia);
 
         public List<Materia> ObtenerMaterias();
 

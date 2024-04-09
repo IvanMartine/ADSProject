@@ -1,6 +1,4 @@
-﻿using ADSProject.Interfaces;
-using ADSProject.Models;
-using ADSProject01.Interfaces;
+﻿using ADSProject01.Interfaces;
 using ADSProject01.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
@@ -8,28 +6,28 @@ using RouteAttribute = Microsoft.AspNetCore.Components.RouteAttribute;
 
 namespace ADSProject01.Controllers
 {
-    [Route("api/materias/")]
-    public class MateriaController : ControllerBase
+    [Route("api/carreras/")]
+    public class CarreraController : ControllerBase
     {
-        private readonly IMateria materia;
+        private readonly ICarrera carrera;
         private const string COD_EXITO = "000000";
         private const string COD_ERROR = "999999";
         private string pCodRespuesta;
         private string pMensajeUsuario;
         private string pMensajeTecnico;
 
-        public MateriaController(IMateria materia)
+        public CarreraController(ICarrera carrera)
         {
-            this.materia = materia;
+            this.carrera = carrera;
         }
 
-        [HttpPost("agregarMateria")]
+        [HttpPost("agregarCarrera")]
 
-        public ActionResult<string> AgregarMateria([FromBody] Materia materia)
+        public ActionResult<string> AgregarCarrera([FromBody] Carrera carrera)
         {
             try
             {
-                int contador = this.materia.AgregarMateria(materia);
+                int contador = this.carrera.AgregarCarrera(carrera);
 
                 if (contador > 0)
                 {
@@ -52,13 +50,13 @@ namespace ADSProject01.Controllers
             }
         }
 
-        [HttpPost("actualizarMateria/{idMateria}")]
+        [HttpPost("actualizarCarrera/{idCarrera}")]
 
-        public ActionResult<string> ActualizarMateria(int idMateria, [FromBody] Materia materia)
+        public ActionResult<string> ActualizarCarrera(int idCarrera, [FromBody] Carrera carrera)
         {
             try
             {
-                int contador = this.materia.ActualizarMateria(idMateria, materia);
+                int contador = this.carrera.ActualizarCarrera(idCarrera, carrera);
 
                 if (contador > 0)
                 {
@@ -82,13 +80,13 @@ namespace ADSProject01.Controllers
 
         }
 
-        [HttpDelete("eliminarMateria/{idMateria}")]
+        [HttpDelete("eliminarCarrera/{idCarrera}")]
 
-        public ActionResult<string> EliminarMateria(int idMateria)
+        public ActionResult<string> EliminarCarrera(int idCarrera)
         {
             try
             {
-                bool eliminado = this.materia.EliminarMateria(idMateria);
+                bool eliminado = this.carrera.EliminarCarrera(idCarrera);
                 if (eliminado)
                 {
                     pCodRespuesta = COD_EXITO;
@@ -109,16 +107,16 @@ namespace ADSProject01.Controllers
             }
         }
 
-        [HttpGet("obtenerMateriaPorID/{idMateria}")]
-        public ActionResult<Materia> ObtenerMateriaPorID(int idMateria)
+        [HttpGet("obtenerCarreraPorID/{idEstudiante}")]
+        public ActionResult<Carrera> ObtenerCarreraPorID(int idCarrera)
         {
             try
             {
-                Materia materia = this.materia.ObtenerMateriaPorID(idMateria);
+                Carrera carrera = this.carrera.ObtenerCarreraPorId(idCarrera);
 
-                if (materia != null)
+                if (carrera != null)
                 {
-                    return Ok(materia);
+                    return Ok(carrera);
                 }
                 else
                 {
@@ -135,15 +133,15 @@ namespace ADSProject01.Controllers
             }
         }
 
-        [HttpGet("obtenerMaterias")]
+        [HttpGet("obtenerCarreras")]
 
-        public ActionResult<List<Materia>> ObtenerMaterias()
+        public ActionResult<List<Carrera>> ObtenerCarreras()
         {
             try
             {
-                List<Materia> lstMateria = this.materia.ObtenerMaterias();
+                List<Carrera> lstCarrera = this.carrera.ObtenerTodasLasCarreras();
 
-                return Ok(lstMateria);
+                return Ok(lstCarrera);
             }
             catch (Exception)
             {

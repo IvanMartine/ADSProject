@@ -10,7 +10,7 @@ namespace ADSProject.Repositories
             new Materia{IdMateria = 1, NombreMateria = "Estatica"}
         };
 
-        public int Actualizarmateria(int idMateria, Materia materia)
+        public int ActualizarMateria(int idMateria, Materia materia)
         {
             try
             {

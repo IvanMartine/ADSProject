@@ -96,3 +96,4 @@ D:\Desktop\LAB ANALISIS DE SISTEMAS\ADSProject\ADSProject\obj\Debug\net8.0\refin
 D:\Desktop\LAB ANALISIS DE SISTEMAS\ADSProject\ADSProject\obj\Debug\net8.0\ADSProject.pdb
 D:\Desktop\LAB ANALISIS DE SISTEMAS\ADSProject\ADSProject\obj\Debug\net8.0\ADSProject.genruntimeconfig.cache
 D:\Desktop\LAB ANALISIS DE SISTEMAS\ADSProject\ADSProject\obj\Debug\net8.0\ref\ADSProject.dll
+D:\Desktop\LAB ANALISIS DE SISTEMAS\ADSProject\ADSProject\obj\Debug\net8.0\ADSProject.sourcelink.json
