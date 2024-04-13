@@ -23,11 +23,17 @@ namespace ADSProject.Controllers
             this.estudiante = estudiante;
         }
 
-        [HttpPost("agregarEstudiante")]
+        [HttpPost("AgregarEstudiante")]
         public ActionResult<string> AgregarEstudiante([FromBody] Estudiante estudiante)
         {
             try
             {
+                //verifica que todas las validaciones por atributo del modelo este correctas
+                if (!ModelState.IsValid) {
+
+                    // en caso de no cumplir todas las validaciones se procede a retornar una respuesta erronea
+                    return BadRequest(ModelState);
+                }
                int contador = this.estudiante.AgregarEstudiante(estudiante);
 
                 if(contador > 0)
@@ -56,6 +62,14 @@ namespace ADSProject.Controllers
         {
             try
             {
+                //verifica que todas las validaciones por atributo del modelo este correctas
+                if (!ModelState.IsValid)
+                {
+
+                    // en caso de no cumplir todas las validaciones se procede a retornar una respuesta erronea
+                    return BadRequest(ModelState);
+                }
+
                 int contador = this.estudiante.ActualizarEstudiante(idEstudiante, estudiante);
 
                 if (contador > 0)
