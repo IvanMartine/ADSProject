@@ -7,7 +7,7 @@ namespace ADSProject.Repositories
     {
         private List<Materia> listitaMaterias = new List<Materia>
         {
-            new Materia{IdMateria = 1, NombreMateria = "Estatica"}
+            new Materia{IdMateria = 1, NombreMateria = "MATEMATICA"}
         };
 
         public int ActualizarMateria(int idMateria, Materia materia)
