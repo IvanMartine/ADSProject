@@ -1,7 +1,7 @@
-﻿using ADSProject01.Models;
-using ADSProject01.Interfaces;
+﻿using ADSProject.Models;
+using ADSProject.Interfaces;
 
-namespace ADSProject01.Repositories
+namespace ADSProject.Repositories
 {
     public class ProfesorRepository : IProfesor
     {

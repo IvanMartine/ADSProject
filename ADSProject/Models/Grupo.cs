@@ -1,4 +1,4 @@
-﻿namespace ADSProject01.Models
+﻿namespace ADSProject.Models
 {
     public class Grupo
     {

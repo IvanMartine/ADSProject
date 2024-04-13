@@ -1,8 +1,7 @@
-﻿using ADSProject01.Models;
-using ADSProject01.Interfaces;
-using System.Numerics;
+﻿using ADSProject.Interfaces;
+using ADSProject.Models;
 
-namespace ADSProject01.Repositories
+namespace ADSProjec.Repositories
 {
     public class CarreraRepository : ICarrera
     {

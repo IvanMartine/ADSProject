@@ -1,7 +1,6 @@
 using ADSProject.Interfaces;
 using ADSProject.Repositories;
-using ADSProject01.Interfaces;
-using ADSProject01.Repositories;
+using ADSProjec.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

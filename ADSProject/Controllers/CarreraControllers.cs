@@ -1,10 +1,10 @@
-﻿using ADSProject01.Interfaces;
-using ADSProject01.Models;
-using Microsoft.AspNetCore.Components;
+﻿using ADSProject.Interfaces;
+using ADSProject.Models;
+using ADSProject.Utils;
 using Microsoft.AspNetCore.Mvc;
-using RouteAttribute = Microsoft.AspNetCore.Components.RouteAttribute;
+using System.Globalization;
 
-namespace ADSProject01.Controllers
+namespace ADSProject.Controllers
 {
     [Route("api/carreras/")]
     public class CarreraController : ControllerBase
@@ -27,6 +27,13 @@ namespace ADSProject01.Controllers
         {
             try
             {
+                //verifica que todas las validaciones por atributo del modelo este correctas
+                if (!ModelState.IsValid)
+                {
+
+                    // en caso de no cumplir todas las validaciones se procede a retornar una respuesta erronea
+                    return BadRequest(ModelState);
+                }
                 int contador = this.carrera.AgregarCarrera(carrera);
 
                 if (contador > 0)
@@ -56,6 +63,13 @@ namespace ADSProject01.Controllers
         {
             try
             {
+                //verifica que todas las validaciones por atributo del modelo este correctas
+                if (!ModelState.IsValid)
+                {
+
+                    // en caso de no cumplir todas las validaciones se procede a retornar una respuesta erronea
+                    return BadRequest(ModelState);
+                }
                 int contador = this.carrera.ActualizarCarrera(idCarrera, carrera);
 
                 if (contador > 0)

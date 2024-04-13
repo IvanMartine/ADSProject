@@ -1,8 +1,8 @@
-﻿using ADSProject01.Models;
+﻿using ADSProject.Models;
 using System.Text.RegularExpressions;
 
 
-namespace ADSProject01.Interfaces
+namespace ADSProject.Interfaces
 {
     public interface IGrupo
     {

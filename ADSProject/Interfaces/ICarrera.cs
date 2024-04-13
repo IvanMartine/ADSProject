@@ -1,6 +1,6 @@
-﻿using ADSProject01.Models;
+﻿using ADSProject.Models;
 
-namespace ADSProject01.Interfaces
+namespace ADSProject.Interfaces
 {
     public interface ICarrera
     {
