@@ -27,6 +27,13 @@ namespace ADSProject01.Controllers
         {
             try
             {
+                //verifica que todas las validaciones por atributo del modelo este correctas
+                if (!ModelState.IsValid)
+                {
+
+                    // en caso de no cumplir todas las validaciones se procede a retornar una respuesta erronea
+                    return BadRequest(ModelState);
+                }
                 int contador = this.materia.AgregarMateria(materia);
 
                 if (contador > 0)
